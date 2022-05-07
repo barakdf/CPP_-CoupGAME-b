@@ -13,7 +13,7 @@ enum action {_income, _foreign_aid, _coup, _transfer, _steal, _tax};
 class Player {
 protected:
     int coin;
-    Game game;
+    Game &game;
     std::string name;
     int action = -1;
     int status = _alive;
@@ -31,6 +31,7 @@ public:
 
     int set_coins(int amount);
 
+    bool check_turn();
     virtual std::string role() const = 0;
 
 };

@@ -41,6 +41,8 @@ namespace coup {
 
         void coup_player(const std::string &name);
 
+        void notify();
+
         ~Game();
 
     };

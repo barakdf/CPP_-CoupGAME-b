@@ -21,5 +21,9 @@ void Duke::block(const Player &attacker) {
 }
 
 void Duke::tax() {
+    if (!check_turn()) {
+        throw std::invalid_argument("Not your turn\n");
+    }
     this->coin += 3;
+    this->game.notify();
 }

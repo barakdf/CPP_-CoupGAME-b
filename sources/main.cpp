@@ -62,7 +62,8 @@
 #include <iostream>
 
 
-
+/** [assassin, duke, contessa]
+ *  [0, 1, 2]*/
 
 //int main() {
 //    std::cout << "Hello, World!" << std::endl;
