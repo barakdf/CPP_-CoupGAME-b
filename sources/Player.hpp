@@ -8,7 +8,7 @@
 #include "Game.hpp"
 using namespace coup;
 //#include "Game.hpp"
-enum status {dead, alive};
+enum status {_dead, _alive};
 enum action {_income, _foreign_aid, _coup, _transfer, _steal, _tax};
 class Player {
 protected:
@@ -16,7 +16,7 @@ protected:
     Game game;
     std::string name;
     int action = -1;
-    int status = alive;
+    int status = _alive;
 public:
     Player(Game &game, const std::string &name);
     int coins() const;
@@ -24,7 +24,15 @@ public:
     void foreign_aid();
     std::string get_name() const;
     void coup(const Player &target);
+
+    /** Getters */
+    int get_status() const;
+    int get_action() const;
+
+    int set_coins(int amount);
+
     virtual std::string role() const = 0;
+
 };
 
 

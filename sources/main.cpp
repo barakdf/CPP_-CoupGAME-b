@@ -1,15 +1,23 @@
 /**
  * Common variables and method to all kind of characters:
+ * Vars:
  * ~int coin
  * ~Game game
  * ~String name
- * ~Status
- * ~Action
- *
+ * ~enum status
+ * ~enum action
+ *Methods:
+ * Coins()
+ * Income()
+ * Foreign_aid()
+ * get_name()
+ * get_status()
+ * get_action()
+ * coup()
  *
  *  Ambassador :
  *  skills:
- *      Offensive -> Transfer().
+ *      Offensive -> Transfer(). **Implemented
  *      Defensive -> block() *steal.
  *
  *  Assassin :

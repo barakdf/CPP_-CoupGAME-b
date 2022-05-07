@@ -82,6 +82,48 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Ambassador.cpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Ambassador.hpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Assassin.cpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Assassin.hpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Captain.cpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Captain.hpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Contessa.cpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Contessa.hpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Duke.cpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Duke.hpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Game.cpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Game.hpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Player.cpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/Player.hpp">
+			<Option target="CPP__CoupGAME_b"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/main.cpp">
 			<Option target="CPP__CoupGAME_b"/>
 		</Unit>

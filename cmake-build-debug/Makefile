@@ -123,6 +123,195 @@ CPP__CoupGAME_b/fast:
 	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/build
 .PHONY : CPP__CoupGAME_b/fast
 
+sources/Ambassador.o: sources/Ambassador.cpp.o
+
+.PHONY : sources/Ambassador.o
+
+# target to build an object file
+sources/Ambassador.cpp.o:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Ambassador.cpp.o
+.PHONY : sources/Ambassador.cpp.o
+
+sources/Ambassador.i: sources/Ambassador.cpp.i
+
+.PHONY : sources/Ambassador.i
+
+# target to preprocess a source file
+sources/Ambassador.cpp.i:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Ambassador.cpp.i
+.PHONY : sources/Ambassador.cpp.i
+
+sources/Ambassador.s: sources/Ambassador.cpp.s
+
+.PHONY : sources/Ambassador.s
+
+# target to generate assembly for a file
+sources/Ambassador.cpp.s:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Ambassador.cpp.s
+.PHONY : sources/Ambassador.cpp.s
+
+sources/Assassin.o: sources/Assassin.cpp.o
+
+.PHONY : sources/Assassin.o
+
+# target to build an object file
+sources/Assassin.cpp.o:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Assassin.cpp.o
+.PHONY : sources/Assassin.cpp.o
+
+sources/Assassin.i: sources/Assassin.cpp.i
+
+.PHONY : sources/Assassin.i
+
+# target to preprocess a source file
+sources/Assassin.cpp.i:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Assassin.cpp.i
+.PHONY : sources/Assassin.cpp.i
+
+sources/Assassin.s: sources/Assassin.cpp.s
+
+.PHONY : sources/Assassin.s
+
+# target to generate assembly for a file
+sources/Assassin.cpp.s:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Assassin.cpp.s
+.PHONY : sources/Assassin.cpp.s
+
+sources/Captain.o: sources/Captain.cpp.o
+
+.PHONY : sources/Captain.o
+
+# target to build an object file
+sources/Captain.cpp.o:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Captain.cpp.o
+.PHONY : sources/Captain.cpp.o
+
+sources/Captain.i: sources/Captain.cpp.i
+
+.PHONY : sources/Captain.i
+
+# target to preprocess a source file
+sources/Captain.cpp.i:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Captain.cpp.i
+.PHONY : sources/Captain.cpp.i
+
+sources/Captain.s: sources/Captain.cpp.s
+
+.PHONY : sources/Captain.s
+
+# target to generate assembly for a file
+sources/Captain.cpp.s:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Captain.cpp.s
+.PHONY : sources/Captain.cpp.s
+
+sources/Contessa.o: sources/Contessa.cpp.o
+
+.PHONY : sources/Contessa.o
+
+# target to build an object file
+sources/Contessa.cpp.o:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Contessa.cpp.o
+.PHONY : sources/Contessa.cpp.o
+
+sources/Contessa.i: sources/Contessa.cpp.i
+
+.PHONY : sources/Contessa.i
+
+# target to preprocess a source file
+sources/Contessa.cpp.i:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Contessa.cpp.i
+.PHONY : sources/Contessa.cpp.i
+
+sources/Contessa.s: sources/Contessa.cpp.s
+
+.PHONY : sources/Contessa.s
+
+# target to generate assembly for a file
+sources/Contessa.cpp.s:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Contessa.cpp.s
+.PHONY : sources/Contessa.cpp.s
+
+sources/Duke.o: sources/Duke.cpp.o
+
+.PHONY : sources/Duke.o
+
+# target to build an object file
+sources/Duke.cpp.o:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Duke.cpp.o
+.PHONY : sources/Duke.cpp.o
+
+sources/Duke.i: sources/Duke.cpp.i
+
+.PHONY : sources/Duke.i
+
+# target to preprocess a source file
+sources/Duke.cpp.i:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Duke.cpp.i
+.PHONY : sources/Duke.cpp.i
+
+sources/Duke.s: sources/Duke.cpp.s
+
+.PHONY : sources/Duke.s
+
+# target to generate assembly for a file
+sources/Duke.cpp.s:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Duke.cpp.s
+.PHONY : sources/Duke.cpp.s
+
+sources/Game.o: sources/Game.cpp.o
+
+.PHONY : sources/Game.o
+
+# target to build an object file
+sources/Game.cpp.o:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Game.cpp.o
+.PHONY : sources/Game.cpp.o
+
+sources/Game.i: sources/Game.cpp.i
+
+.PHONY : sources/Game.i
+
+# target to preprocess a source file
+sources/Game.cpp.i:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Game.cpp.i
+.PHONY : sources/Game.cpp.i
+
+sources/Game.s: sources/Game.cpp.s
+
+.PHONY : sources/Game.s
+
+# target to generate assembly for a file
+sources/Game.cpp.s:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Game.cpp.s
+.PHONY : sources/Game.cpp.s
+
+sources/Player.o: sources/Player.cpp.o
+
+.PHONY : sources/Player.o
+
+# target to build an object file
+sources/Player.cpp.o:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Player.cpp.o
+.PHONY : sources/Player.cpp.o
+
+sources/Player.i: sources/Player.cpp.i
+
+.PHONY : sources/Player.i
+
+# target to preprocess a source file
+sources/Player.cpp.i:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Player.cpp.i
+.PHONY : sources/Player.cpp.i
+
+sources/Player.s: sources/Player.cpp.s
+
+.PHONY : sources/Player.s
+
+# target to generate assembly for a file
+sources/Player.cpp.s:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/Player.cpp.s
+.PHONY : sources/Player.cpp.s
+
 sources/main.o: sources/main.cpp.o
 
 .PHONY : sources/main.o
@@ -159,6 +348,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... CPP__CoupGAME_b"
+	@echo "... sources/Ambassador.o"
+	@echo "... sources/Ambassador.i"
+	@echo "... sources/Ambassador.s"
+	@echo "... sources/Assassin.o"
+	@echo "... sources/Assassin.i"
+	@echo "... sources/Assassin.s"
+	@echo "... sources/Captain.o"
+	@echo "... sources/Captain.i"
+	@echo "... sources/Captain.s"
+	@echo "... sources/Contessa.o"
+	@echo "... sources/Contessa.i"
+	@echo "... sources/Contessa.s"
+	@echo "... sources/Duke.o"
+	@echo "... sources/Duke.i"
+	@echo "... sources/Duke.s"
+	@echo "... sources/Game.o"
+	@echo "... sources/Game.i"
+	@echo "... sources/Game.s"
+	@echo "... sources/Player.o"
+	@echo "... sources/Player.i"
+	@echo "... sources/Player.s"
 	@echo "... sources/main.o"
 	@echo "... sources/main.i"
 	@echo "... sources/main.s"
