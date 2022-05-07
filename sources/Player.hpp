@@ -8,12 +8,13 @@
 #include "Game.hpp"
 using namespace coup;
 //#include "Game.hpp"
-enum status {_dead, _alive};
-enum action {_income, _foreign_aid, _coup, _transfer, _steal, _tax};
+
 class Player {
 protected:
+    enum status {_dead, _alive};
+    enum action {_income, _foreign_aid, _coup, _transfer, _steal, _tax};
     int coin;
-    Game &game;
+    Game *game;
     std::string name;
     int action = -1;
     int status = _alive;

@@ -4,8 +4,9 @@
 
 #include "Player.hpp"
 
-Player::Player(coup::Game &games, const std::string &name):coin(0), name(name), game(games) {
-    this->game.add(name);
+Player::Player(coup::Game &games, const std::string &name):coin(0), name(name) {
+    this->game = &games;
+    this->game->add(name);
 }
 
 std::string Player::get_name() const{
@@ -18,30 +19,30 @@ int Player::coins() const {
 
 void Player::income() {
     if (!check_turn()) {
-        throw std::invalid_argument("Not your turn" + this->name + " its " + this->game.turn() + " turn\n");
+        throw std::invalid_argument("Not your turn" + this->name + " its " + this->game->turn() + " turn\n");
     }
     this->action = _income;
     this->coin++;
-    this->game.notify();
+    this->game->notify();
 }
 
 void Player::foreign_aid() {
     if (!check_turn()) {
-        throw std::invalid_argument("Not your turn " + this->name + " its " + this->game.turn() + " turn\n");
+        throw std::invalid_argument("Not your turn " + this->name + " its " + this->game->turn() + " turn\n");
     }
     this->action = _foreign_aid;
     this->coin += 2;
-    this->game.notify();
+    this->game->notify();
 }
 
 void Player::coup(const Player &target) {
     if (!check_turn()) {
-        throw std::invalid_argument("Not your turn" + this->name + " its " + this->game.turn() + " turn\n");
+        throw std::invalid_argument("Not your turn" + this->name + " its " + this->game->turn() + " turn\n");
     }
     this->set_coins(-7);
     this->action = _coup;
-    this->game.coup_player(target.get_name());
-    this->game.notify();
+    this->game->coup_player(target.get_name());
+    this->game->notify();
 }
 
 /** Getters */
@@ -74,5 +75,5 @@ int Player::set_coins(int amount) {
 
 bool Player::check_turn() {
 //    std::cout << "size is " << this->game.turn() << std::endl;
-    return this->name == this->game.turn();
+    return this->name == this->game->turn();
 }

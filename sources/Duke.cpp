@@ -25,5 +25,5 @@ void Duke::tax() {
         throw std::invalid_argument("Not your turn\n");
     }
     this->coin += 3;
-    this->game.notify();
+    this->game->notify();
 }

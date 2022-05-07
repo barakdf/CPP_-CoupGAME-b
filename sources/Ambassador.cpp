@@ -22,7 +22,7 @@ void Ambassador::transfer(Player &from, Player &to) {
     int taken = from.set_coins(-1);
     to.set_coins(taken);
     this->action = _transfer;
-    this->game.notify();
+    this->game->notify();
 }
 /** Defensive */
 void Ambassador::block(const Player &attacker) {
