@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CPP__CoupGAME_b.dir/main.cpp.o"
+  "CMakeFiles/CPP__CoupGAME_b.dir/sources/main.cpp.o"
   "CPP__CoupGAME_b"
   "CPP__CoupGAME_b.pdb"
 )

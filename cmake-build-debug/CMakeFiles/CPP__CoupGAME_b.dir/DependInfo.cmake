@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/main.cpp" "/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/cmake-build-debug/CMakeFiles/CPP__CoupGAME_b.dir/main.cpp.o"
+  "/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/sources/main.cpp" "/mnt/c/Users/barak/Documents/GitHub/CPP_ CoupGAME-b/cmake-build-debug/CMakeFiles/CPP__CoupGAME_b.dir/sources/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

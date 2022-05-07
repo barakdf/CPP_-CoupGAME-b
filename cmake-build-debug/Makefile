@@ -123,32 +123,32 @@ CPP__CoupGAME_b/fast:
 	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/build
 .PHONY : CPP__CoupGAME_b/fast
 
-main.o: main.cpp.o
+sources/main.o: sources/main.cpp.o
 
-.PHONY : main.o
+.PHONY : sources/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/main.cpp.o
-.PHONY : main.cpp.o
+sources/main.cpp.o:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/main.cpp.o
+.PHONY : sources/main.cpp.o
 
-main.i: main.cpp.i
+sources/main.i: sources/main.cpp.i
 
-.PHONY : main.i
+.PHONY : sources/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/main.cpp.i
-.PHONY : main.cpp.i
+sources/main.cpp.i:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/main.cpp.i
+.PHONY : sources/main.cpp.i
 
-main.s: main.cpp.s
+sources/main.s: sources/main.cpp.s
 
-.PHONY : main.s
+.PHONY : sources/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/main.cpp.s
-.PHONY : main.cpp.s
+sources/main.cpp.s:
+	$(MAKE) -f CMakeFiles/CPP__CoupGAME_b.dir/build.make CMakeFiles/CPP__CoupGAME_b.dir/sources/main.cpp.s
+.PHONY : sources/main.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... CPP__CoupGAME_b"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... sources/main.o"
+	@echo "... sources/main.i"
+	@echo "... sources/main.s"
 .PHONY : help
 
 
