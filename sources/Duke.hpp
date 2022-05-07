@@ -19,7 +19,7 @@ public:
 //    void coup(const Player &target) override;
 
     /** Special Skills */
-    void block(const Player &attacker);
+    void block(Player &greedy);
     void tax();
 };
 #endif //CPP__COUPGAME_A_DUKE_HPP

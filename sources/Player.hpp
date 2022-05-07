@@ -12,28 +12,32 @@ using namespace coup;
 class Player {
 protected:
     enum status {_dead, _alive};
-    enum action {_income, _foreign_aid, _coup, _transfer, _steal, _tax};
+    enum action {_income, _foreign_aid, _coup, _transfer, _steal, _tax, _assassinate};
     int coin;
     Game *game;
     std::string name;
     int action = -1;
     int status = _alive;
+    bool check_10_coins() const;
 public:
     Player(Game &game, const std::string &name);
     int coins() const;
     void income();
     void foreign_aid();
     std::string get_name() const;
-    void coup(const Player &target);
+    void coup(Player &target);
 
     /** Getters */
     int get_status() const;
+    int& get_status();
     int get_action() const;
+    int& get_action();
 
     int set_coins(int amount);
 
     bool check_turn();
     virtual std::string role() const = 0;
+    void foreign_blocked();
 
 };
 

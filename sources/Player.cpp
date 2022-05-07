@@ -3,7 +3,9 @@
 //
 
 #include "Player.hpp"
-
+bool Player::check_10_coins() const {
+    return this->coin >= 10;
+}
 Player::Player(coup::Game &games, const std::string &name):coin(0), name(name) {
     this->game = &games;
     this->game->add(name);
@@ -18,6 +20,9 @@ int Player::coins() const {
 }
 
 void Player::income() {
+    if (check_10_coins()) {
+        throw std::invalid_argument("Must coup!\n");
+    }
     if (!check_turn()) {
         throw std::invalid_argument("Not your turn" + this->name + " its " + this->game->turn() + " turn\n");
     }
@@ -27,6 +32,9 @@ void Player::income() {
 }
 
 void Player::foreign_aid() {
+    if (check_10_coins()) {
+        throw std::invalid_argument("Must coup!\n");
+    }
     if (!check_turn()) {
         throw std::invalid_argument("Not your turn " + this->name + " its " + this->game->turn() + " turn\n");
     }
@@ -35,13 +43,23 @@ void Player::foreign_aid() {
     this->game->notify();
 }
 
-void Player::coup(const Player &target) {
+void Player::coup(Player &target) {
     if (!check_turn()) {
         throw std::invalid_argument("Not your turn" + this->name + " its " + this->game->turn() + " turn\n");
     }
-    this->set_coins(-7);
-    this->action = _coup;
+    if (target.get_status() == _dead) {
+        throw std::invalid_argument("This player is missing from the game!\n");
+    }
+    if (this->role() == "Assassin" && this->coin < 7) {
+        this->set_coins(-3);
+        this->action = _assassinate;
+    } else {
+        this->set_coins(-7);
+        this->action = _coup;
+    }
+    target.get_status() = _dead;
     this->game->coup_player(target.get_name());
+
     this->game->notify();
 }
 
@@ -49,26 +67,32 @@ void Player::coup(const Player &target) {
 int Player::get_status() const {
     return this->status;
 }
+int& Player::get_status() {
+    return this->status;
+}
 
 int Player::get_action() const {
+    return this->action;
+}
+int& Player::get_action() {
     return this->action;
 }
 
 int Player::set_coins(int amount) {
     /* the first check for actions such as coup and assassin coup.*/
 //    int cost = (-1) * amount;
-    if (amount < 2 && this->coin < (-amount)) {
+    if (amount < -2 && this->coin < (-amount)) {
         throw std::invalid_argument("not enough coins for this action!\n");
     }
     /* this if for captain steal and ambassador transfer */
     if (amount < 0) {
         int taken = 0;
-        for (int i = coin; i >=0 ; ++i) {
+        for (int i = coin; i >=0 ; --i) {
             taken++;
         }
         return taken;
     }
-    /* for ambassador destination transfer*/
+    /* for blocked actions*/
     this->coin += amount;
     return -1;
 }
@@ -76,4 +100,8 @@ int Player::set_coins(int amount) {
 bool Player::check_turn() {
 //    std::cout << "size is " << this->game.turn() << std::endl;
     return this->name == this->game->turn();
+}
+
+void Player::foreign_blocked() {
+    set_coins(-2);
 }

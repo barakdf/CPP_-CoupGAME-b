@@ -3,6 +3,8 @@
 //
 
 #include "Ambassador.hpp"
+#include "Captain.hpp"
+
 std::string Ambassador::role() const {
     return "Ambassador";
 }
@@ -13,11 +15,17 @@ std::string Ambassador::role() const {
 /** Special Skills */
 /** Offensive*/
 void Ambassador::transfer(Player &from, Player &to) {
+    if (check_10_coins()) {
+        throw std::invalid_argument("Must coup!\n");
+    }
     if (!check_turn()) {
         throw std::invalid_argument("Not your turn\n");
     }
     if (from.get_status() == _dead || to.get_status() == _dead) {
         throw std::invalid_argument("One of the players is missing\n");
+    }
+    if (from.coins() == 0) {
+        throw std::invalid_argument("cant transfer from this player\n");
     }
     int taken = from.set_coins(-1);
     to.set_coins(taken);
@@ -25,6 +33,9 @@ void Ambassador::transfer(Player &from, Player &to) {
     this->game->notify();
 }
 /** Defensive */
-void Ambassador::block(const Player &attacker) {
-
+void Ambassador::block(Player &attacker) {
+    if(attacker.get_action() != _steal) {
+        throw std::invalid_argument("Ambassador Invalid Block\n");
+    }
+    dynamic_cast<Captain *>(&attacker)->blocked();
 }

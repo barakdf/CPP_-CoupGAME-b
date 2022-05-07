@@ -9,14 +9,17 @@
 #include "Player.hpp"
 
 class Captain: public Player {
+private:
+    Player *c_victim;
 public:
-   Captain (coup::Game &game, const std::string &name): Player(game,name){}
+   Captain (coup::Game &game, const std::string &name): Player(game,name), c_victim(nullptr){}
 
     std::string role() const override;
 //    void coup(const Player &target) override;
 
     /** Special Skills */
-    void block(const Player &attacker);
+    void block(Player &attacker);
+    void blocked();
     void steal(Player &victim);
 };
 

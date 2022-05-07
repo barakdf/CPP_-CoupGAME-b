@@ -16,14 +16,22 @@ std::string Duke::role() const {
 //}
 
 /** Special Skills */
-void Duke::block(const Player &attacker) {
-
+void Duke::block(Player &greedy) {
+    if (greedy.get_action() != _foreign_aid) {
+        throw std::invalid_argument("Invalid Duke block!\n");
+    }
+    greedy.foreign_blocked();
+    greedy.get_action() = _income;
 }
 
 void Duke::tax() {
+    if (check_10_coins()) {
+        throw std::invalid_argument("Must coup!\n");
+    }
     if (!check_turn()) {
         throw std::invalid_argument("Not your turn\n");
     }
     this->coin += 3;
+    this->action = _assassinate;
     this->game->notify();
 }

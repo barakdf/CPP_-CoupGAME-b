@@ -20,13 +20,14 @@
 //#include "Player.hpp"
 
 namespace coup {
+    enum game_st {_preMatch, _ready, _running};
     class Game {
     private:
         size_t initialized_players;
         size_t p_turn;
         size_t m_size;
         std::vector<std::string> members;
-
+        int game_status = _preMatch;
 
     public:
         Game() : p_turn(0), m_size(0),initialized_players(0) {}
