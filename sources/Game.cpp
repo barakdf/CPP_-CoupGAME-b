@@ -7,7 +7,7 @@
 
 using namespace coup;
 
-void Game::add(const std::string& name) {
+size_t Game::add(const std::string& name) {
     if (m_size == 6) {
         throw std::invalid_argument("game is in full capacity\n");
     }
@@ -20,6 +20,7 @@ void Game::add(const std::string& name) {
         game_status = _ready;
     }
     this->initialized_players++;
+    return (m_size - 1);
 }
 
 std::string Game::turn() const {
@@ -43,6 +44,18 @@ std::string Game::winner() const {
     }
     return this->members.at(0);
 }
+
+void Game::revive(int victim_pos, const std::string &name, size_t assassin_pos) {
+    auto index = this->members.begin() + (int )victim_pos;
+    this->members.insert(index ,name);
+    this->m_size++;
+    if (assassin_pos > victim_pos) {
+        this->notify();
+    } else {
+        this->p_turn = this->p_turn % this->m_size;
+    }
+
+}
 //
 //Game::~Game() {
 //    if (initialized_players == 0) {
@@ -52,6 +65,12 @@ std::string Game::winner() const {
 //    }
 //}
 
-void Game::coup_player(const std::string &name) {
-    
+void Game::coup_player(const std::string &name, size_t index) {
+    if (this->members.at(index) != name) {
+        throw std::invalid_argument("the specific name does not exist in the game\n");
+    }
+    this->members.erase(this->members.begin() + (int )index);
+    this->m_size--;
+
+
 }

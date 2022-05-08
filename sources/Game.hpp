@@ -32,7 +32,7 @@ namespace coup {
     public:
         Game() : p_turn(0), m_size(0),initialized_players(0) {}
 
-        void add(const std::string& name);
+        size_t add(const std::string& name);
 
         std::string turn() const;
 
@@ -40,9 +40,11 @@ namespace coup {
 
         std::string winner() const;
 
-        void coup_player(const std::string &name);
+        void coup_player(const std::string &name, size_t index);
 
         void notify();
+
+        void revive(int victim_pos, const std::string &name, size_t assassin_pos);
 
 //        ~Game();
 

@@ -19,7 +19,7 @@ public:
 //    void coup(const Player &target) override;
 
     /** Special Skills */
-    void block(const Player &attacker);
+    void block(Player &attacker);
 };
 
 

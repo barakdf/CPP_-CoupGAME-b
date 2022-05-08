@@ -18,7 +18,9 @@ protected:
     std::string name;
     int action = -1;
     int status = _alive;
+    size_t p_index;
     bool check_10_coins() const;
+    Player *last_couped;
 public:
     Player(Game &game, const std::string &name);
     int coins() const;
@@ -32,8 +34,9 @@ public:
     int& get_status();
     int get_action() const;
     int& get_action();
-
     int set_coins(int amount);
+    size_t get_position() const;
+    Player& get_last_couped();
 
     bool check_turn();
     virtual std::string role() const = 0;

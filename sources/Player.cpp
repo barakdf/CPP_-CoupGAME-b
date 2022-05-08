@@ -3,22 +3,17 @@
 //
 
 #include "Player.hpp"
-bool Player::check_10_coins() const {
-    return this->coin >= 10;
-}
-Player::Player(coup::Game &games, const std::string &name):coin(0), name(name) {
-    this->game = &games;
-    this->game->add(name);
-}
 
-std::string Player::get_name() const{
-    return this->name;
+Player::Player(coup::Game &games, const std::string &name):coin(0), name(name), last_couped(nullptr) {
+    this->game = &games;
+    this->p_index = this->game->add(name);
 }
 
 int Player::coins() const {
     return this->coin;
 }
 
+/** Player common actions */
 void Player::income() {
     if (check_10_coins()) {
         throw std::invalid_argument("Must coup!\n");
@@ -58,14 +53,18 @@ void Player::coup(Player &target) {
         this->action = _coup;
     }
     target.get_status() = _dead;
-    this->game->coup_player(target.get_name());
-
+    this->game->coup_player(target.get_name(), target.get_position());
+    this->last_couped = &target;
     this->game->notify();
 }
 
-/** Getters */
+/** Getters & Setters*/
 int Player::get_status() const {
     return this->status;
+}
+
+std::string Player::get_name() const{
+    return this->name;
 }
 int& Player::get_status() {
     return this->status;
@@ -78,6 +77,15 @@ int& Player::get_action() {
     return this->action;
 }
 
+size_t Player::get_position() const {
+    return this->p_index;
+}
+
+Player& Player::get_last_couped() {
+    return *(this->last_couped);
+}
+
+/** Coin handler*/
 int Player::set_coins(int amount) {
     /* the first check for actions such as coup and assassin coup.*/
 //    int cost = (-1) * amount;
@@ -97,11 +105,17 @@ int Player::set_coins(int amount) {
     return -1;
 }
 
+/** Common player blocked */
+void Player::foreign_blocked() {
+    set_coins(-2);
+}
+
+/** CHECKS */
+bool Player::check_10_coins() const {
+    return this->coin >= 10;
+}
+
 bool Player::check_turn() {
 //    std::cout << "size is " << this->game.turn() << std::endl;
     return this->name == this->game->turn();
-}
-
-void Player::foreign_blocked() {
-    set_coins(-2);
 }

@@ -51,11 +51,11 @@ TEST_CASE("Bad Cases")
         for(int i=0;i<10;i++)
         {
            switch(i%5){
-               case 0: CHECK_THROWS(Duke duke3(game_1,"Fail")); break;
-               case 1: CHECK_THROWS(Assassin assassin1(game_1,"Fail")); break;
-               case 2: CHECK_THROWS(Ambassador ambassador1(game_1,"Fail")); break;
-               case 3: CHECK_THROWS(Captain captain1(game_1, "Fail")); break;
-               case 4: CHECK_THROWS(Contessa contessa1(game_1, "Fail")); break;
+               case 0: try{Duke duke3(game_1,"Fail") ;CHECK_EQ(true,false);}catch(exception &e){CHECK_EQ(true,true);} break;
+               case 1: try{Assassin assassin1(game_1,"Fail") ;CHECK_EQ(true,false);}catch(exception &e){CHECK_EQ(true,true);} break;
+               case 2: try{Ambassador ambassador1(game_1,"Fail") ;CHECK_EQ(true,false);}catch(exception &e){CHECK_EQ(true,true);} break;
+               case 3: try{Captain captain1(game_1,"Fail") ;CHECK_EQ(true,false);}catch(exception &e){CHECK_EQ(true,true);} break;
+               case 4: try{Contessa contessa1(game_1,"Fail") ;CHECK_EQ(true,false);}catch(exception &e){CHECK_EQ(true,true);} break;
            }
         }
     }
