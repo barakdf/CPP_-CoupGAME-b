@@ -19,7 +19,7 @@ void Player::income() {
         throw std::invalid_argument("Must coup!\n");
     }
     if (!check_turn()) {
-        throw std::invalid_argument("Not your turn" + this->name + " its " + this->game->turn() + " turn\n");
+        throw std::invalid_argument("Not your turn " + this->name + " its " + this->game->turn() + " turn\n");
     }
     this->action = _income;
     this->coin++;
@@ -53,9 +53,8 @@ void Player::coup(Player &target) {
         this->action = _coup;
     }
     target.get_status() = _dead;
-    this->game->coup_player(target.get_name(), target.get_position());
+    this->game->coup_player(target.get_name(), target.get_name(), this->get_name());
     this->last_couped = &target;
-    this->game->notify();
 }
 
 /** Getters & Setters*/
@@ -95,8 +94,9 @@ int Player::set_coins(int amount) {
     /* this if for captain steal and ambassador transfer */
     if (amount < 0) {
         int taken = 0;
-        for (int i = coin; i >=0 ; --i) {
+        for (int i = coin; i >0 && taken < (-amount) ; --i) {
             taken++;
+            this->coin--;
         }
         return taken;
     }

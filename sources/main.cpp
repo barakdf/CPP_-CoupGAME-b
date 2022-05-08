@@ -60,12 +60,56 @@
  *  */
 
 #include <iostream>
+#include "Player.hpp"
+#include "Duke.hpp"
+#include "Assassin.hpp"
+#include "Ambassador.hpp"
+#include "Captain.hpp"
+#include "Contessa.hpp"
 
-
-/** [assassin, duke, contessa]
+/** [duke, assassin, Ambassador, contessa]
  *  [0, 1, 2]*/
 
 //int main() {
-//    std::cout << "Hello, World!" << std::endl;
-//    return 0;
+//    Game game_8{}; // build game . add players
+//    Duke duke{game_8, "Moshe"};
+//    Assassin assassin{game_8, "Yossi"};
+//    Ambassador ambassador{game_8, "Meirav"};
+//    Captain captain{game_8, "Reut"};
+//    Contessa contessa{game_8, "Gilad"};
+//    for (const std::string& player : game_8.players()) {
+//        std::cout << player << ", ";
+//    }
+//    std::cout<<std::endl;
+//
+//    for (int i = 0; i < 7; i++) {
+//        duke.income();
+//        assassin.income();
+//        ambassador.income();
+//        captain.income();
+//        contessa.income();
+//    }
+//// each one has 7 coins, enough for using coup()
+//    duke.coup(assassin); //moshe -> yossi
+//    for (const std::string& player : game_8.players()) {
+//        std::cout << player << ", ";
+//    }
+//    std::cout<<std::endl << "turn -> " << game_8.turn() << std::endl;
+//
+//    ambassador.coup(contessa); // meirav -> gilad
+//    for (const std::string& player : game_8.players()) {
+//        std::cout << player << ", ";
+//    }
+//    std::cout<<std::endl << "turn -> " << game_8.turn() << std::endl;
+//
+//    captain.coup(ambassador); // reut -> meirav
+//    for (const std::string& player : game_8.players()) {
+//        std::cout << player << ", ";
+//    }
+//    std::cout<<std::endl << "turn -> " << game_8.turn() << std::endl;
+//
+//    duke.income();
+//    std::cout<<std::endl << "turn -> " << game_8.turn() << std::endl;
+//    captain.income();
+//    std::cout<<std::endl << "turn -> " << game_8.turn() << std::endl;
 //}
