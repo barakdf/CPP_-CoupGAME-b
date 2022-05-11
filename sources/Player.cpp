@@ -3,7 +3,11 @@
 //
 
 #include "Player.hpp"
+const int COUP_COST = 7, COUP_ASSASSIN_COST = 3, COUP_MUST_VALUE = 10;
 
+/** constructor - initialize fields: coin -> 0, name -> given parameter name, last_couped -> null
+ *  game pointer in player class will point at the given game parameter.
+ *  call the game add method to add *this player to game */
 Player::Player(coup::Game &games, const std::string &name):coin(0), name(name), last_couped(nullptr) {
     this->game = &games;
     this->p_index = this->game->add(name);
@@ -45,11 +49,11 @@ void Player::coup(Player &target) {
     if (target.get_status() == _dead) {
         throw std::invalid_argument("This player is missing from the game!\n");
     }
-    if (this->role() == "Assassin" && this->coin < 7) {
-        this->set_coins(-3);
+    if (this->role() == "Assassin" && this->coin < COUP_COST) {
+        this->set_coins(-COUP_ASSASSIN_COST);
         this->action = _assassinate;
     } else {
-        this->set_coins(-7);
+        this->set_coins(-COUP_COST);
         this->action = _coup;
     }
     target.get_status() = _dead;
@@ -112,7 +116,7 @@ void Player::foreign_blocked() {
 
 /** CHECKS */
 bool Player::check_10_coins() const {
-    return this->coin >= 10;
+    return this->coin >= COUP_MUST_VALUE;
 }
 
 bool Player::check_turn() {

@@ -34,7 +34,7 @@ void Ambassador::transfer(Player &from, Player &to) {
 }
 /** Defensive */
 void Ambassador::block(Player &attacker) {
-    if(attacker.get_action() != _steal) {
+    if(attacker.get_action() != _steal || this->status == _dead) {
         throw std::invalid_argument("Ambassador Invalid Block\n");
     }
     dynamic_cast<Captain *>(&attacker)->blocked();

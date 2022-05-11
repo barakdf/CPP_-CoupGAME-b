@@ -10,7 +10,7 @@ std::string Captain::role() const {
 
 /** Special Skills */
 void Captain::block(Player &attacker) {
-    if(attacker.get_action() != _steal) {
+    if(attacker.get_action() != _steal || this->status == _dead ) {
         throw std::invalid_argument("Ambassador Invalid Block\n");
     }
     dynamic_cast<Captain *>(&attacker)->blocked();

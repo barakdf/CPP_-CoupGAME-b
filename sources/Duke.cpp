@@ -17,7 +17,7 @@ std::string Duke::role() const {
 
 /** Special Skills */
 void Duke::block(Player &greedy) {
-    if (greedy.get_action() != _foreign_aid) {
+    if (greedy.get_action() != _foreign_aid || this->status == _dead) {
         throw std::invalid_argument("Invalid Duke block!\n");
     }
     greedy.foreign_blocked();

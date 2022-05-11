@@ -70,46 +70,120 @@
 /** [duke, assassin, Ambassador, contessa]
  *  [0, 1, 2]*/
 
-//int main() {
-//    Game game_8{}; // build game . add players
-//    Duke duke{game_8, "Moshe"};
-//    Assassin assassin{game_8, "Yossi"};
-//    Ambassador ambassador{game_8, "Meirav"};
-//    Captain captain{game_8, "Reut"};
-//    Contessa contessa{game_8, "Gilad"};
-//    for (const std::string& player : game_8.players()) {
-//        std::cout << player << ", ";
-//    }
-//    std::cout<<std::endl;
-//
-//    for (int i = 0; i < 7; i++) {
-//        duke.income();
-//        assassin.income();
-//        ambassador.income();
-//        captain.income();
-//        contessa.income();
-//    }
-//// each one has 7 coins, enough for using coup()
-//    duke.coup(assassin); //moshe -> yossi
-//    for (const std::string& player : game_8.players()) {
-//        std::cout << player << ", ";
-//    }
-//    std::cout<<std::endl << "turn -> " << game_8.turn() << std::endl;
-//
-//    ambassador.coup(contessa); // meirav -> gilad
-//    for (const std::string& player : game_8.players()) {
-//        std::cout << player << ", ";
-//    }
-//    std::cout<<std::endl << "turn -> " << game_8.turn() << std::endl;
-//
-//    captain.coup(ambassador); // reut -> meirav
-//    for (const std::string& player : game_8.players()) {
-//        std::cout << player << ", ";
-//    }
-//    std::cout<<std::endl << "turn -> " << game_8.turn() << std::endl;
-//
-//    duke.income();
-//    std::cout<<std::endl << "turn -> " << game_8.turn() << std::endl;
-//    captain.income();
-//    std::cout<<std::endl << "turn -> " << game_8.turn() << std::endl;
-//}
+int main() {
+    Game scenario;
+    Assassin assassin{scenario, "asi"};
+    Ambassador ambassador{scenario, "ambi"};
+    Captain captain{scenario, "capi"};
+    Contessa contessa{scenario, "conti"};
+    Duke duke{scenario, "duk"};
+
+    /** Start Game */
+
+    assassin.income();
+    ambassador.income();
+    captain.income();
+    contessa.income();
+    duke.tax();
+    std::cout << "Game coin STATUS: assassin: 1, ambassador: 1, captain: 1, contessa: 1, duke: \n" << std::endl;
+
+    assassin.foreign_aid();
+    ambassador.foreign_aid();
+    std::cout << " --duke is blocking the ambassador from taking double coin" << std::endl;
+    duke.block(ambassador);
+    std::cout << " --captain is trying to steal 2 coins from the ambassador " << std::endl;
+    captain.steal(ambassador);
+    std::cout << " --the ambassador is blocking captain stealing" << std::endl;
+    ambassador.block(captain);
+    contessa.income();
+    duke.tax();
+
+    std::cout << "\nGame coin STATUS: assassin: 3, ambassador: 1, captain: 1, contessa: 2, duke: \n" << std::endl;
+
+    std::cout << " --the assassin is trying to assassinate duke " << std::endl;
+    assassin.coup(duke);
+    std::cout << " --contessa is blocking the assassin operation and saves duke's life " << std::endl;
+    contessa.block(assassin);
+    std::cout << " --the ambassador is transferring one coin from contessa to assassin" << std::endl;
+    ambassador.transfer(contessa, assassin);
+    std::cout << " --captain is stealing 2 coins from duke, the ambassador is not blocking this operation" << std::endl;
+    captain.steal(duke);
+    contessa.foreign_aid();
+    std::cout << " --duke is not blocking contessa double coin" << std::endl;
+    duke.tax();
+
+    std::cout << "\nGame coin STATUS: assassin: 1, ambassador: 1, captain: 1, contessa: 3, duke: \n" << std::endl;
+
+    assassin.foreign_aid();
+    std::cout << " --duke is blocking assassin from double coin" << std::endl;
+    duke.block(assassin);
+    std::cout << " --the ambassador is transferring one coin from captain to the assassin " << std::endl;
+    ambassador.transfer(captain, assassin);
+    std::cout << " --the duke is not blocking captain from double coin " << std::endl;
+    captain.foreign_aid();
+    contessa.foreign_aid();
+    std::cout << " --duke is betraying contessa who saved him life from the assassin and coup her " << std::endl;
+    duke.coup(contessa);
+
+
+    std::cout << "\nGame coin STATUS: assassin: 2, ambassador: 1, captain: 2, contessa: DEAD, duke: \n" << std::endl;
+
+    assassin.income();
+    ambassador.foreign_aid();
+    std::cout << " --duke is blocking ambassador from getting double coin" << std::endl;
+    duke.block(ambassador);
+    captain.steal(assassin);
+    std::cout << " --ambassador is blocking captain from stealing 2 coins from the assassin " << std::endl;
+    ambassador.block(captain);
+    duke.tax();
+
+    std::cout << "\nGame coin STATUS: assassin: 3, ambassador: 1, captain: 2, contessa: DEAD, duke: 3 \n" << std::endl;
+
+   std::cout << " --the assassin is eliminating the captain, contessa is already dead so captain can be saved " << std::endl;
+
+    assassin.coup(captain);
+    ambassador.transfer(duke, assassin);
+    duke.tax();
+
+    std::cout << "\nGame coin STATUS: assassin: 0, ambassador: 1, captain: DEAD, contessa: DEAD, duke: 5 \n" << std::endl;
+
+    assassin.income();
+    ambassador.foreign_aid();
+    std::cout << " --duke is blocking ambassador from taking double coin " << std::endl;
+    duke.block(ambassador);
+    duke.tax();
+
+    std::cout << "\nGame coin STATUS: assassin: 1, ambassador: 1, captain: DEAD, contessa: DEAD, duke: 7 \n" << std::endl;
+
+    assassin.income();
+    ambassador.transfer(duke, assassin);
+    duke.tax();
+
+    std::cout << "\nGame coin STATUS: assassin: 3, ambassador: 1, captain: DEAD, contessa: DEAD, duke: 9 \n" << std::endl;
+
+    std::cout << " --the assassin is eliminating the duke and contessa cannot save him because he betrayed and killed her" << std::endl;
+    assassin.coup(duke);
+    std::cout << " --ambassador is taking double coin and duke is DEAD so he cant block him " << std::endl;
+    ambassador.foreign_aid();
+
+    std::cout << "\nGame coin STATUS: assassin: 0, ambassador: 3, captain: DEAD, contessa: DEAD, duke: DEAD \n" << std::endl;
+
+    assassin.foreign_aid();
+    ambassador.foreign_aid();
+
+    std::cout << "\nGame coin STATUS: assassin: 2, ambassador: 5, captain: DEAD, contessa: DEAD, duke: DEAD \n" << std::endl;
+
+    assassin.foreign_aid();
+    ambassador.foreign_aid();
+
+    std::cout << "\nGame coin STATUS: assassin: 4, ambassador: 7, captain: DEAD, contessa: DEAD, duke: DEAD \n" << std::endl;
+
+    assassin.coup(ambassador);
+
+
+    /** Game Ends */
+
+    std::cout << "game end : winner is ~ " << scenario.winner() << " ~" << std::endl;
+
+
+}

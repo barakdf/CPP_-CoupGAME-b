@@ -5,13 +5,14 @@
 #include "Game.hpp"
 #include <algorithm>
 
+const int MAX_GAME_SIZE = 6;
 using namespace coup;
 
 size_t Game::add(const std::string& name) {
     if (game_status == _running) {
         throw std::invalid_argument("game already started!\n");
     }
-    if (m_size == 6) {
+    if (m_size == MAX_GAME_SIZE) {
         throw std::invalid_argument("game is in full capacity\n");
     }
 //    if (std::binary_search(this->members.begin(), this->members.end(), name)) {
