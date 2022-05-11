@@ -40,7 +40,7 @@ namespace coup {
 
         std::string winner() const;
 
-        void coup_player(const std::string &name,  const std::string &target_name, const std::string &attker_name);
+        void coup_player(const std::string &target_name, const std::string &attker_name);
 
         void notify();
 

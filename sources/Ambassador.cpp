@@ -5,6 +5,7 @@
 #include "Ambassador.hpp"
 #include "Captain.hpp"
 
+/** return Ambassador as the role of this player.*/
 std::string Ambassador::role() const {
     return "Ambassador";
 }
@@ -13,7 +14,11 @@ std::string Ambassador::role() const {
 //}
 
 /** Special Skills */
-/** Offensive*/
+/** Offensive
+ *  Ambassador transfer skill is transferring 1 coin from one player to another.
+ *  the method receive two parameters, both are Player object references
+ *  the method made the initial checks to be a legal action.
+ *  using the set_coin() method to make the transfer */
 void Ambassador::transfer(Player &from, Player &to) {
     if (check_10_coins()) {
         throw std::invalid_argument("Must coup!\n");
@@ -32,7 +37,11 @@ void Ambassador::transfer(Player &from, Player &to) {
     this->action = _transfer;
     this->game->notify();
 }
-/** Defensive */
+/** Defensive
+ *  Ambassador block skill is used for blocking any steals made by the Captain players in the game.
+ *  this method receive one Player object reference as parameter.
+ *  two initial check is made, if the Player who we want to block is innocent, or he is out of the game.
+ *  in Case its legal block, we call blocked() method that specified in Captain class.*/
 void Ambassador::block(Player &attacker) {
     if(attacker.get_action() != _steal || this->status == _dead) {
         throw std::invalid_argument("Ambassador Invalid Block\n");
